@@ -11,19 +11,19 @@ export default class ProductService{
     }
 
     addProducto = async(producto) => {
-        return this.knex('productos').insert(producto)
+        const respuesta = this.knex('productos').insert(producto)
+        return respuesta
     }
 
     updateProductoById = async(id,producto) => {
-        return this.knex('productos').where({producto_id:id}).update(producto);
+        return this.knex('productos').where({producto_id:id}).update(producto)
+
     }
 
+    ShowProductoById = async(id) => {
+        return this.knex('productos').where({producto_id:id})
+    }
     deleteProductoById = async(id) => {
-        return this.knex('productos').where({producto_id:id}).del();
+        return this.knex('productos').where({producto_id:id}).del()
     }
-
-    showProductoById = async(id) => {
-        return await this.knex('productos').where({producto_id:id}).select('*').first();
-    }
-
 }

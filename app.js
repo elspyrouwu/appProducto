@@ -1,6 +1,6 @@
 import express  from 'express'
 
-import productRouter from './src/router/productoRouter.js'
+import productRouter from './src/routes/productoRouter.js'
 import __dirname from './src/utils.js'
 import Handlebars from 'express-handlebars'
 
